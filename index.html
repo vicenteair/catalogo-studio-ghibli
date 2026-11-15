@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ghibli — Catálogo de Filmes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-badge">スタジオジブリ</div>
+        <h1>Studio Ghibli</h1>
+        <p>Catálogo oficial de animações clássicas consumido em tempo real</p>
+        
+        <!-- Barra de Navegação e Filtros de Favoritos -->
+        <div class="filter-bar">
+            <button id="filter-all" class="filter-btn active" onclick="setFilter('all')">Todos os Filmes</button>
+            <button id="filter-favs" class="filter-btn" onclick="setFilter('favorites')">
+                ♥ Meus Favoritos (<span id="fav-count">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="movies-container" class="cards-grid">
+            <!-- Cards injetados via JavaScript -->
+        </section>
+    </main>
+
+    <!-- Modal de Detalhes -->
+    <div id="movie-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div class="modal-body">
+                <img id="modal-banner" src="" alt="Banner do Filme" class="modal-banner">
+                <div class="modal-content">
+                    <h2 id="modal-title"></h2>
+                    <h3 id="modal-original-title"></h3>
+                    <div class="modal-tags">
+                        <span id="modal-year" class="tag"></span>
+                        <span id="modal-score" class="tag tag-highlight"></span>
+                        <span id="modal-time" class="tag"></span>
+                    </div>
+                    <div class="modal-info">
+                        <p><strong>Direção:</strong> <span id="modal-director"></span></p>
+                        <p><strong>Produção:</strong> <span id="modal-producer"></span></p>
+                    </div>
+                    <p id="modal-description" class="modal-description"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
